@@ -25,6 +25,18 @@ const Profile = () => {
         }))
     }
 
+    //handleUpdateThisValue - will update selected value
+    const handleUpdateThisValue = (itemId) => {
+        setnData(nData.map((element) => {
+             if(element.id === itemId){
+                return { name:`${element.name} updated`}
+             }
+             else{
+                return element;
+             }
+        }))
+    }
+
     return (
         <div className='mainTag'>
             <ol>
@@ -34,6 +46,7 @@ const Profile = () => {
                             {value.name}
                             <span></span>
                             {/* to pass arguement in handleRemoveThisValue we need to make arrow fucntion */}
+                            <button onClick={() => handleUpdateThisValue(value.id)}>Update me</button>
                             <button onClick={() => handleRemoveThisValue(value.id)}>Remove me</button>
                         </li>
                     )
