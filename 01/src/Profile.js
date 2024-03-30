@@ -29,7 +29,8 @@ const Profile = () => {
     const handleUpdateThisValue = (itemId) => {
         setnData(nData.map((element) => {
              if(element.id === itemId){
-                return { name:`${element.name} updated`}
+                return { name:`${element.name} updated`} 
+                //Using return { name: ${element.name} updated }; means you're explicitly creating a new object with only the name property being updated. This object contains only the name property, and any other properties of the original element object will be discarded.
              }
              else{
                 return element;
