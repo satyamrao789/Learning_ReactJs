@@ -6,19 +6,24 @@ const Profile = () => {
     const [nData, setnData] = useState(profileData);
     console.log(profileData);
 
-    const handleClick = () => {
-        setnData([]);
+    //handleRemoveAll() - removes all data at once.
+    const handleRemoveAll = () => {
+        setnData([]); // sets the nData as empty
     }
-
 
     return (
         <div className='mainTag'>
             <ol>
                 {
-                    nData.map(value => <li key={value.id}>{value.name}</li>)
+                    nData.map( value => 
+                    <li key={value.id}>
+                        {value.name}  
+                    </li>
+                    )
                 }
             </ol>
-            <button onClick={handleClick}>Click me</button>
+            <button onClick={handleRemoveAll}>Clear ALL</button>
+           
         </div>
     )
 }
