@@ -18,20 +18,30 @@ const Profile = () => {
         setnData(newData); // update the state with the new array containing the last element removed
     }
 
+    //handleRemoveThisValue - will remove selected value
+    const handleRemoveThisValue = (itemId) => {
+        setnData(nData.filter((element) => {
+            return element.id !== itemId
+        }))
+    }
+
     return (
         <div className='mainTag'>
             <ol>
                 {
-                    nData.map( value => 
-                    <li key={value.id}>
-                        {value.name}  
-                    </li>
+                    nData.map(value =>
+                        <li key={value.id}>
+                            {value.name}
+                            <span></span>
+                            {/* to pass arguement in handleRemoveThisValue we need to make arrow fucntion */}
+                            <button onClick={() => handleRemoveThisValue(value.id)}>Remove me</button>
+                        </li>
                     )
                 }
             </ol>
             <button onClick={handleRemoveAll}>Clear ALL</button>
             <button onClick={handleRemoveLast}>Remove Last Value</button>
-           
+
         </div>
     )
 }
