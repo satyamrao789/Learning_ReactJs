@@ -1,6 +1,7 @@
 import './App.css';
 import Mobile from './Mobile';
 import Counter from './Counter';
+import Profile from './Profile';
 
 function App() {
     let date = 31;
@@ -12,6 +13,7 @@ function App() {
             <p>Hello I am a paragraph</p>
             <Mobile/>
             <Counter/>
+            <Profile/>
 
         </div>
         
