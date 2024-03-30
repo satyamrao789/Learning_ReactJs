@@ -28,15 +28,20 @@ const items = [{
     picture: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/8/9/n/-original-imagtc6fyrstd4jm.jpeg?q=70",
     title: "Apple iPhone 15 Plus 128GB",
     amount: 100
-}]
+}];
 
 
 export default function Mobile() {
     return (
         <div>
             <h1>Checkout the list of Mobiles available</h1>
-            <MobileList image={item.picture} productTitle={item.title} price={item.amount} />
-            <MobileList image={item2.picture} productTitle={item2.title} price={item2.amount} />
+            {
+                items.map((value) => {
+                    return <MobileList image={value.picture} productTitle={value.title} price={value.amount} />
+                })
+            }
+            {/* <MobileList image={item.picture} productTitle={item.title} price={item.amount} /> */}
+            {/* <MobileList image={item2.picture} productTitle={item2.title} price={item2.amount} /> */}
 
         </div>
     )
