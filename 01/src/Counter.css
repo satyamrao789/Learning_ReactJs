@@ -1,0 +1,7 @@
+.counterTag{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid #1cf4ff;
+    margin: 20px;
+}
