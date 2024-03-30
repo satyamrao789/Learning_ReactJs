@@ -36,7 +36,7 @@ export default function Mobile() {
             <h1>Checkout the list of Mobiles available</h1>
             <MobileList image={item.picture} productTitle={item.title} price={item.amount} />
             <MobileList image={item2.picture} productTitle={item2.title} price={item2.amount} />
-            
+
         </div>
     )
 }

@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-evenly;
     border: 1px solid #ddd;
+    margin: 20px;
 }
 .productImage{
     flex: 0 0 100;
