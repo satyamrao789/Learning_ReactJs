@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import MobileList from './MobileList';
 
 const item = {
@@ -12,6 +12,24 @@ export default function Mobile() {
         <div>
             <h1>Checkout the list of Mobiles available</h1>
             <MobileList image={item.image} productTitle={item.productTitle} price={item.price} />
+        </div>
+    )
+}*/
+
+import React from 'react'
+import MobileList from './MobileList';
+
+const item = {
+    picture: "https://rukminim2.flixcart.com/image/312/312/l3rmzrk0/mobile/v/f/y/-original-imagetmeguhrdsqs.jpeg?q=70",
+    title: "Realme GT Master Edition",
+    amount: 90
+}
+
+export default function Mobile() {
+    return (
+        <div>
+            <h1>Checkout the list of Mobiles available</h1>
+            <MobileList image={item.picture} productTitle={item.title} price={item.amount} />
         </div>
     )
 }
