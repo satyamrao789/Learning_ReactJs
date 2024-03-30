@@ -7,15 +7,19 @@ const Counter = () => {
 
     console.log(count);
     console.log(useState());
-    const handleClick = () => {
+    const handleClickInc = () => {
         setCount(count + 2);
+    }
+    const handleClickDec = () => {
+        setCount(count - 2);
     }
 
     // console.log(useState(5));
     return (
         <div className='counterTag'>
             <h1>{count}</h1>
-            <button onClick={handleClick}>Increment by 2</button>
+            <button onClick={handleClickInc}>Increment by 2</button>
+            <button onClick={handleClickDec}>Decrement by 2</button>
         </div>
     )
 }
