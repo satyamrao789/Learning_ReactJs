@@ -1,0 +1,13 @@
+.mainTag{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid #ddd;
+}
+.productImage{
+    flex: 0 0 100;
+    display: block;
+    max-width: 100px;
+    margin-right: 20px;
+    padding: 20px;
+}
