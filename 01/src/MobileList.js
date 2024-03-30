@@ -1,5 +1,6 @@
-import React from 'react'
-import './MobileList.css'
+import React from 'react';
+import './MobileList.css';
+
 
 export default function MobileList(props) {
 
