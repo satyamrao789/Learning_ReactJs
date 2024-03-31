@@ -28,18 +28,18 @@ const Profile = () => {
     //handleUpdateThisValue - will update selected value
     const handleUpdateThisValue = (itemId) => {
         setnData(nData.map((element) => {
-             if(element.id === itemId){
+            if (element.id === itemId) {
                 // return { name:`${element.name} updated`} 
                 //Using return { name: ${element.name} updated }; means you're explicitly creating a new object with only the name property being updated. This object contains only the name property, and any other properties of the original element object will be discarded.
 
-                return {...element, name:`${element.name} updated`}
+                return { ...element, name: `${element.name} updated` }
                 //On the other hand, using { ...element, name: ${element.name} updated } will spread the rest of the properties of the element object into the new object, while updating the name property. This approach ensures that all other properties of the element object are retained in the new object. 
 
 
-             }
-             else{
+            }
+            else {
                 return element;
-             }
+            }
         }))
     }
 
@@ -58,8 +58,9 @@ const Profile = () => {
                     )
                 }
             </ol>
-            <button onClick={handleRemoveAll}>Clear ALL</button>
             <button onClick={handleRemoveLast}>Remove Last Value</button>
+            <button onClick={handleRemoveAll}>Clear ALL</button>
+
 
         </div>
     )

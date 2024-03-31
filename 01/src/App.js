@@ -2,6 +2,7 @@ import './App.css';
 import Mobile from './Mobile';
 import Counter from './Counter';
 import Profile from './Profile';
+import Form from './Form';
 
 function App() {
     let date = 31;
@@ -14,6 +15,7 @@ function App() {
             <Mobile/>
             <Counter/>
             <Profile/>
+            <Form/>
 
         </div>
         

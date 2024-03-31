@@ -27,7 +27,7 @@ export default function Mobile() {
             <h1>Checkout the list of Mobiles available</h1>
             {
                 mobileItems.map((value) => {
-                    return <MobileList image={value.picture} productTitle={value.title} price={value.amount} />
+                    return <MobileList key={value.id} image={value.picture} productTitle={value.title} price={value.amount} />
                 })
             }
             {/* <MobileList image={item.picture} productTitle={item.title} price={item.amount} /> */}
