@@ -56,25 +56,7 @@ const NewForm = () => {
             }
         }
     };
-    // const handleInputValue = (e) => {
-    //     const { name, value } = e.target;
-    //     setFormData({ ...formData, [name]: value });
-    //     if (name === 'confirmpassword') {
-    //         if (value === formData.password) {
-    //             setFormData((prevFormData) => ({
-    //                 ...prevFormData,
-    //                 matchpassword: true
-    //             }));
-    //         } else {
-    //             setFormData((prevFormData) => ({
-    //                 ...prevFormData,
-    //                 matchpassword: false
-    //             }));
-    //         }
-    //     }
-    // };
     
-
     const handleSubmit = (e) => {
         e.preventDefault();
     }
