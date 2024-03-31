@@ -28,10 +28,14 @@ const Form = () => {
         else
             setMatchPassword(false);
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
     return (
         <div className='mainTag'>
-            <h1>Taking Peoples Data</h1>
-            <form>
+            <h1>multiple useState</h1>
+            <form onSubmit={handleSubmit}>
                 <label>Name:
                     <input type='text' value={name} onChange={handleName}></input>
                 </label>
@@ -45,6 +49,7 @@ const Form = () => {
                     <input value={confimpassword} type='password' onChange={handleConfirmPassword}></input>
                 </label>
                 {!matchpassword && <p style={{ color: 'red' }}>Password do not match</p>}
+                <button type='submit'>Submit</button>
             </form>
         </div >
     )

@@ -3,6 +3,7 @@ import Mobile from './Mobile';
 import Counter from './Counter';
 import Profile from './Profile';
 import Form from './Form';
+import NewForm from './NewForm';
 
 function App() {
     let date = 31;
@@ -16,6 +17,7 @@ function App() {
             <Counter/>
             <Profile/>
             <Form/>
+            <NewForm/>
 
         </div>
         
