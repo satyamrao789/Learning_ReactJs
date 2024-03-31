@@ -5,7 +5,9 @@ const NewForm = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        password: ''
+        password: '',
+        confirmpassword: '',
+        matchpassword: true
     })
 
     const handleInputValue = (e) => {
@@ -19,7 +21,7 @@ const NewForm = () => {
 
 
         // console.log(e.target.value);
-        
+
 
         //below line giving error - because The error you're encountering is due to the usage of the variables name and value in the handleInputValue function without declaring or defining them.
         // setFormData({...formData, [name] : value}) 
@@ -31,9 +33,47 @@ const NewForm = () => {
 
         //Approach - 2
         //here i defined name,value
-        const [name, value] = e.target;
-        setFormData({...formData, [name] : value}) 
-    }
+        const {name, value} = e.target;
+        setFormData({ ...formData, [name]: value })
+        // if (name === 'confirmpassword') {
+        //     if (value === formData.password) {
+        //         setFormData({...formData, matchpassword: true});
+        //     } else {
+        //         setFormData({...formData, matchpassword: false});
+        //     }
+        // }
+        if (name === 'confirmpassword') {
+            if (value === formData.password) {
+                setFormData((prevFormData) => ({ //prevFormData me formData ka latest state store ho gya hai, jab arrow function use kiye to
+                    ...prevFormData,
+                    matchpassword: true
+                }));
+            } else {
+                setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    matchpassword: false
+                }));
+            }
+        }
+    };
+    // const handleInputValue = (e) => {
+    //     const { name, value } = e.target;
+    //     setFormData({ ...formData, [name]: value });
+    //     if (name === 'confirmpassword') {
+    //         if (value === formData.password) {
+    //             setFormData((prevFormData) => ({
+    //                 ...prevFormData,
+    //                 matchpassword: true
+    //             }));
+    //         } else {
+    //             setFormData((prevFormData) => ({
+    //                 ...prevFormData,
+    //                 matchpassword: false
+    //             }));
+    //         }
+    //     }
+    // };
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,7 +81,7 @@ const NewForm = () => {
 
     return (
         <div className='mainTag'>
-            <h1>multiple useState</h1>
+            <h1>multiple useState into one</h1>
             <form onSubmit={handleSubmit}>
                 <label>Name:
                     <input name='name' value={formData.name} type='text' onChange={handleInputValue}></input>
@@ -52,10 +92,10 @@ const NewForm = () => {
                 <label>Password:
                     <input name='password' value={formData.password} type='password' onChange={handleInputValue}></input>
                 </label>
-                {/* <label>Confirm Password:
-                    <input value={confimpassword} type='password' onChange={handleConfirmPassword}></input>
+                <label>Confirm Password:
+                    <input name='confirmpassword' value={formData.confirmpassword} type='password' onChange={handleInputValue}></input>
                 </label>
-                {!matchpassword && <p style={{ color: 'red' }}>Password do not match</p>} */}
+                {!formData.matchpassword && <p style={{ color: 'red' }}>Password do not match</p>}
                 <button type='submit'>Submit</button>
             </form>
         </div >
