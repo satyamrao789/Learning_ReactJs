@@ -5,6 +5,8 @@ const Form = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confimpassword, setConfirmPassword] = useState('');
+    const [matchpassword, setMatchPassword] = useState(true);
 
     const handleName = (e) => {
         console.log(e.target.value);
@@ -18,10 +20,14 @@ const Form = () => {
         console.log(e.target.value);
         setPassword(e.target.value);
     }
-    // const handleConfirmPassword = (e) => {
-    //     console.log(e.target.value);
-    //     setPassword(e.target.value);
-    // }
+    const handleConfirmPassword = (e) => {
+        console.log(e.target.value);
+        setConfirmPassword(e.target.value);
+        if (e.target.value === password)
+            setMatchPassword(true);
+        else
+            setMatchPassword(false);
+    }
     return (
         <div className='mainTag'>
             <h1>Taking Peoples Data</h1>
@@ -35,11 +41,12 @@ const Form = () => {
                 <label>Password:
                     <input value={password} type='password' onChange={handlePassword}></input>
                 </label>
-                {/* <label>Name:
-                    <input value={name} type='text' onChange={handleConfirmPassword}></input>
-                </label> */}
+                <label>Confirm Password:
+                    <input value={confimpassword} type='password' onChange={handleConfirmPassword}></input>
+                </label>
+                {!matchpassword && <p style={{ color: 'red' }}>Password do not match</p>}
             </form>
-        </div>
+        </div >
     )
 }
 
